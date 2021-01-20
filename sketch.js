@@ -1,18 +1,32 @@
+const Engine = Matter.Engine;
+const World= Matter.World;
+const Bodies = Matter.Bodies;
+const Constraint = Matter.Constraint;
 
+var backGround;
 
-function preload() {
-//preload the images here
+function preload()
+{
+backGround=loadImage("images/GamingBackground.png");
 
 }
 
 function setup() {
-  createCanvas(3000, 800);
-  // create sprites here
+  createCanvas(900,400);
+
+  engine = Engine.create();
+  world = engine.world;
+
+  var backGround=createSprite(0,0,0,0);
+  backGround.add("backGround",backimag)
 
 }
 
-function draw() {
-  background(0);
-
+function draw()
+ {
+  background("background");
+  Engine.update(engine);
+  
+  drawSprites();
 }
 
